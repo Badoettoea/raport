@@ -1,6 +1,9 @@
 {
   "name": "raport",
   "version": "1.0.0",
+  "description": "Aplikasi Web Raport Vue 3 + Vite + Google Sheets",
+  "author": "Badoettoea",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -8,9 +11,12 @@
   },
   "dependencies": {
     "vue": "^3.4.0",
-    "vue-router": "^4.2.0"
+    "vue-router": "^4.2.5",
+    "axios": "^1.6.0",
+    "chart.js": "^4.4.0"
   },
   "devDependencies": {
-    "vite": "^5.0.0"
+    "vite": "^5.2.0",
+    "@vitejs/plugin-vue": "^5.0.0"
   }
 }

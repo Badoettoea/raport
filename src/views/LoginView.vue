@@ -1,32 +1,25 @@
 <template>
   <div class="login">
-    <h1>Login Rapor</h1>
+    <h1>Login Raport</h1>
     <input v-model="pin" placeholder="Masukkan PIN" />
     <button @click="login">Login</button>
-    <p v-if="error">{{ error }}</p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { getUserData } from '@/services/sheetApi'
 
-const router = useRouter()
 const pin = ref('')
-const error = ref('')
+const router = useRouter()
 
-async function login() {
-  const users = await getUserData(pin.value)
-  if (users.length > 0) {
-    const user = users[0]
-    if (user.role === 'admin') {
-      router.push('/admin')
-    } else {
-      router.push('/user')
-    }
+function login() {
+  if (pin.value === '1234') {
+    router.push('/user')
+  } else if (pin.value === 'admin') {
+    router.push('/admin')
   } else {
-    error.value = 'PIN salah!'
+    alert('PIN Salah!')
   }
 }
 </script>
@@ -35,8 +28,12 @@ async function login() {
 .login {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: center;
-  margin-top: 100px;
+  justify-content: center;
+  height: 100vh;
+}
+input, button {
+  margin: 10px;
+  padding: 10px;
 }
 </style>

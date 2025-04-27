@@ -1,9 +1,6 @@
 {
   "name": "raport",
   "version": "1.0.0",
-  "description": "Aplikasi Web Raport Vue 3 + Vite + Google Sheets",
-  "author": "Badoettoea",
-  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
